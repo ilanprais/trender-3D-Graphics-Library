@@ -1,6 +1,5 @@
 import pygame
-import Projector
-import TShape
+from Objects import TShape
 
 class TPoint(TShape.TShape):
 

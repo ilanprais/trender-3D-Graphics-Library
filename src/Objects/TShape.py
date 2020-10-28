@@ -1,5 +1,5 @@
 import pygame
-import Projector
+from Projection import Projector
 
 class TShape:
 

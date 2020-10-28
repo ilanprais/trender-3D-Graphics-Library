@@ -1,5 +1,5 @@
 import pygame
-import TShape
+from Objects import TShape
 
 class TLine(TShape.TShape):
 

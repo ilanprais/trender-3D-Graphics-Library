@@ -1,8 +1,8 @@
 import pygame
-import TLine
-import TPoint
-import TRectangle
-import TCube
+from Objects import TLine
+from Objects import TPoint
+from Objects import TRectangle
+from Objects import TCube
 
 class trender:
 
