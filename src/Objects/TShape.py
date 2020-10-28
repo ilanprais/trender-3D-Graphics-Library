@@ -9,6 +9,7 @@ class TShape:
 		self.angles = [0, 0, 0]
 		self.axis = self.generateAxis()
 		self.projector = Projector.Projector()
+		self.binded = None
 
 	def projectedVertexes(self):
 		projected = []
@@ -21,6 +22,7 @@ class TShape:
 
 	def bind(self, other):
 		self.axis = other.axis
+		self.binded = other
 
 	def resetAxis(self):
 		self.axis = self.generateAxis()
@@ -32,6 +34,11 @@ class TShape:
 		for ver in self.vertexes:
 			for i in [0, 1, 2]:
 				ver[i] += vector[i]
+
+		if self.binded == None or self.binded == self:
+			self.axis = [self.generateAxis()[0], self.generateAxis()[1], self.axis[2]]	
+		else:
+			self.axis = self.binded.axis
 
 	def moveAngles(self, vector):
 		for i in [0, 1, 2]:

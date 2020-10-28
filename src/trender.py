@@ -6,9 +6,10 @@ from Objects import TCube
 
 class trender:
 
-	def __init__(self, width, height):
+	def __init__(self, width, height, color = (0, 0, 0)):
 		self.width = width
 		self.height = height
+		self.color = color
 		self.running = True
 		self.shapes = []
 
@@ -45,8 +46,11 @@ class trender:
 	def isRunning(self):
 		return self.running
 
+	def background(self, color):
+		self.color = color
+
 	def renderFrame(self):
-		self.screen.fill((0, 0, 0))
+		self.screen.fill(self.color)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				self.running = False
