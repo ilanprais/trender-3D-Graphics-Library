@@ -36,7 +36,7 @@ for obj in objects:
 	r.add(obj)
 
 while r.isRunning():
-	# r.moveAllLocations([0 ,0 , 2])
+	r.moveAllLocations([0 ,0 , 2])
 	r.moveAllAngles([0, 2, 0])
 	r.renderFrame()
 	r.wait()

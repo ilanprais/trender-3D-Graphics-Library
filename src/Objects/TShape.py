@@ -3,9 +3,9 @@ from Projection import Projector
 
 class TShape:
 
-	def __init__(self, vertexes, color = (255, 255, 255)):
+	def __init__(self, vertexes, fill= (255, 255, 255)):
 		self.vertexes = vertexes
-		self.color = color
+		self.fill = fill
 		self.angles = [0, 0, 0]
 		self.axis = self.generateAxis()
 		self.projector = Projector.Projector()
@@ -45,7 +45,4 @@ class TShape:
 			self.angles[i] += vector[i]
 
 	def display(self, surface):
-		points = self.projectedVertexes()
-		for i in range (len(points) - 1):
-			pygame.draw.line(surface, self.color, (points[i][0], points[i][1]),(points[i + 1][0], points[i + 1][1]))
-		pygame.draw.line(surface, self.color, (points[len(points) - 1][0], points[len(points) - 1][1]),(points[0][0], points[0][1]))
+		pass

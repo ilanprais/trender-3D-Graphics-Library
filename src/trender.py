@@ -26,11 +26,11 @@ class trender:
 	def line(self, start, end, color = (255, 255, 255)):
 		return TLine.TLine(start, end, color)
 
-	def rectangle(self, topLeft, width, height, color = (255, 255, 255)):
-		return TRectangle.TRectangle(topLeft, width, height, color)
+	def rectangle(self, topLeft, width, height, border = (255, 255, 255), fill = None):
+		return TRectangle.TRectangle(topLeft, width, height, border, fill)
 
-	def cube(self, topLeft, width, height, depth, color = (255, 255, 255)):
-		return TCube.TCube(topLeft, width, height, depth, color)
+	def cube(self, topLeft, width, height, depth, border = (255, 255, 255), fill = None):
+		return TCube.TCube(topLeft, width, height, depth, border, fill)
 
 	def moveAllLocations(self, vector):
 		for shape in self.shapes:
