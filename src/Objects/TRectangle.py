@@ -3,7 +3,7 @@ from Objects import TShape
 
 class TRectangle(TShape.TShape):
 
-	def __init__(self, topLeft, width, height, border, fill):
+	def __init__(self, topLeft, width, height, border, fill, projector):
 		# topLeft, topRight, bottomRight, bottomLeft
 		self.topLeft = topLeft
 		self.vertexes = []
@@ -11,7 +11,7 @@ class TRectangle(TShape.TShape):
 		self.vertexes.append([topLeft[0] + width, topLeft[1], topLeft[2]])
 		self.vertexes.append([topLeft[0] + width, topLeft[1] + height, topLeft[2]])
 		self.vertexes.append([topLeft[0], topLeft[1] + height, topLeft[2]])
-		super().__init__(self.vertexes, border)
+		super().__init__(self.vertexes, border, projector)
 		self.border = border
 		self.fill = fill
 		

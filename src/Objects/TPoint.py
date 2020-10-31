@@ -3,8 +3,8 @@ from Objects import TShape
 
 class TPoint(TShape.TShape):
 
-	def __init__(self, vector, fill = (255, 255, 255)):
-		super().__init__([vector], fill)
+	def __init__(self, vector, fill, projector):
+		super().__init__([vector], fill, projector)
 
 	def generateAxis(self):
 		return self.vertexes[0]

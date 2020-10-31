@@ -3,12 +3,12 @@ from Projection import Projector
 
 class TShape:
 
-	def __init__(self, vertexes, fill= (255, 255, 255)):
+	def __init__(self, vertexes, fill, projector):
 		self.vertexes = vertexes
 		self.fill = fill
 		self.angles = [0, 0, 0]
 		self.axis = self.generateAxis()
-		self.projector = Projector.Projector()
+		self.projector = projector
 		self.binded = None
 
 	def projectedVertexes(self):

@@ -1,13 +1,20 @@
 import trender
 
-r = trender.trender(800, 600)
-r.background((100, 80, 93))
+WIDTH = 800
+HEIGHT = 600
+BACKGROUND = (100, 80, 93)
+
+r = trender.trender(WIDTH, HEIGHT)
+r.background(BACKGROUND)
 r.initialize()
+r.cameraDistance(1.3)
+
 
 objects = []
 
 # Body
 cube = r.cube([300, 230, 300], 200, 200, 200)
+cube.fill = [50, 50, 50]
 objects.append(cube)
 
 # Roof
@@ -31,12 +38,12 @@ rect2 = r.rectangle([385, 375, 300], 5, 5)
 objects.append(rect2)
 
 for obj in objects:
-	obj.setAngles([20, 20, 0])
+	obj.setAngles([0, 0, 0])
 	obj.bind(cube)
 	r.add(obj)
 
 while r.isRunning():
-	r.moveAllLocations([0 ,0 , 2])
+	# r.moveAllLocations([0, 0, 5])
 	r.moveAllAngles([0, 2, 0])
 	r.renderFrame()
 	r.wait()
