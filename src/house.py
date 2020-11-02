@@ -43,9 +43,10 @@ for obj in objects:
 	r.add(obj)
 
 while r.isRunning():
-	# r.moveAllLocations([0, 0, 5])
-	r.moveAllAngles([0, 2, 0])
+	r.moveAllLocations([0, 0, 3])
+	r.moveAllAngles([0, 3, 0])
 	r.renderFrame()
 	r.wait()
+
 
 

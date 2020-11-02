@@ -10,14 +10,14 @@ class Projector:
 
 	def project(self, axis, angles, vector):
 
-		vector = [vector[0] - axis[0], vector[1] - axis[1], vector[2] - axis[2]]
+		vectorAtZero = [vector[0] - axis[0], vector[1] - axis[1], vector[2] - axis[2]]
 		
 		xMatrix = self.xMatrix(angles)
 		yMatrix = self.yMatrix(angles)
 		zMatrix = self.zMatrix(angles)
 
 		rotation = xMatrix.dot(yMatrix).dot(zMatrix)
-		rotated = rotation.dot(vector)
+		rotated = rotation.dot(vectorAtZero)
 
 		factor = rotated[2]/500
 		z = 1/(self.distance - factor)

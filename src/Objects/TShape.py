@@ -36,7 +36,7 @@ class TShape:
 				ver[i] += vector[i]
 
 		if self.binded == None or self.binded == self:
-			self.axis = [self.generateAxis()[0], self.generateAxis()[1], self.axis[2]]	
+			self.axis = [self.generateAxis()[0], self.generateAxis()[1], self.generateAxis()[2]]	
 		else:
 			self.axis = self.binded.axis
 
