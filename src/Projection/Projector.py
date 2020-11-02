@@ -3,7 +3,7 @@ import math
 
 class Projector:
 
-	def __init__(self, maxWidth, maxHeight, distance = 1):
+	def __init__(self, maxWidth, maxHeight, distance = 1.75):
 		self.maxWidth = maxWidth
 		self.maxHeight = maxHeight
 		self.distance = distance
@@ -19,7 +19,7 @@ class Projector:
 		rotation = xMatrix.dot(yMatrix).dot(zMatrix)
 		rotated = rotation.dot(vectorAtZero)
 
-		factor = rotated[2]/500
+		factor = (rotated[2] + axis[2])/500
 		z = 1/(self.distance - factor)
 
 		projMatrix = np.array([[z, 0, 0], [0, z, 0]])

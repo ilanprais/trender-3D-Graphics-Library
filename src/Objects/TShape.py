@@ -36,8 +36,9 @@ class TShape:
 				ver[i] += vector[i]
 
 		if self.binded == None or self.binded == self:
-			self.axis = [self.generateAxis()[0], self.generateAxis()[1], self.generateAxis()[2]]	
+			self.resetAxis()	
 		else:
+			self.binded.resetAxis()
 			self.axis = self.binded.axis
 
 	def moveAngles(self, vector):

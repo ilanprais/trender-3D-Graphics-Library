@@ -7,7 +7,6 @@ BACKGROUND = (100, 80, 93)
 r = trender.trender(WIDTH, HEIGHT)
 r.background(BACKGROUND)
 r.initialize()
-r.cameraDistance(1.3)
 
 
 objects = []
@@ -44,7 +43,7 @@ for obj in objects:
 
 while r.isRunning():
 	r.moveAllLocations([0, 0, 3])
-	r.moveAllAngles([0, 3, 0])
+	r.moveAllAngles([0, 0, 0])
 	r.renderFrame()
 	r.wait()
 
